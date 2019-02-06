@@ -5,7 +5,14 @@ body {
 
 header h1 {
   font-family: "Creepster", cursive;
-  font-size: 2rem;
+  font-size: 3rem;
+}
+header a {
+  display: inline-block;
+  transition: 0.25s;
+}
+header a:hover {
+  transform: translate(-1px, 1px);
 }
 
 nav {
@@ -31,6 +38,10 @@ nav a:visited {
 
 main {
   min-height: 50vh;
+}
+
+#main-questions {
+  margin-left: 30px;
 }
 
 form {

@@ -186,6 +186,19 @@ var creatureList = [{
   breed: 'breed',
   description: 'desccription'
 }];
+var formName = document.querySelector('#name');
+var formBreed = document.querySelector('#breed');
+var formDescription = document.querySelector('#description');
+var button = document.querySelector('button');
+button.addEventListener('click', function (e) {
+  e.preventDefault();
+  creatureList.push({
+    name: formName.value,
+    breed: formBreed.value,
+    description: formDescription.value
+  });
+  console.log(creatureList);
+});
 console.log(creatureList);
 },{"/style.scss":"style.scss"}],"../../.nvm/versions/node/v8.15.0/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -214,7 +227,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "38159" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "41459" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
