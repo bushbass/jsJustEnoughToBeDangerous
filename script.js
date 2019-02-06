@@ -1,15 +1,11 @@
 import '/style.scss';
 
-const creatureList = [
-  { name: 'name', breed: 'breed', description: 'desccription' }
-];
+const creatureList = [];
 
 const formName = document.querySelector('#name')
 const formBreed = document.querySelector('#breed')
 const formDescription = document.querySelector('#description')
 const button = document.querySelector('button')
-
-
 
 
 button.addEventListener('click', (e)=>{
@@ -18,11 +14,12 @@ button.addEventListener('click', (e)=>{
         name:formName.value,
         breed: formBreed.value,
         description: formDescription.value})
-        console.log(creatureList)
+    console.log(creatureList)
 })
 
 
+window.localStorage.setItem=JSON.stringify(creatureList)
 
 
-
-console.log(creatureList);
+let test = JSON.parse(window.localStorage.getItem(creatureList))
+console.log('test',test)
