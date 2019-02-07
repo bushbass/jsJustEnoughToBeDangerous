@@ -104,7 +104,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   // Override the current require with this new one
   return newRequire;
-})({"../../.nvm/versions/node/v8.15.0/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+})({"../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;
 
 function getBundleURLCached() {
@@ -136,7 +136,7 @@ function getBaseURL(url) {
 
 exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
-},{}],"../../.nvm/versions/node/v8.15.0/lib/node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
+},{}],"../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
 var bundle = require('./bundle-url');
 
 function updateLink(link) {
@@ -171,34 +171,68 @@ function reloadCSS() {
 }
 
 module.exports = reloadCSS;
-},{"./bundle-url":"../../.nvm/versions/node/v8.15.0/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"style.scss":[function(require,module,exports) {
+},{"./bundle-url":"../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"style.scss":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"../../.nvm/versions/node/v8.15.0/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"script.js":[function(require,module,exports) {
+},{"/Users/alex/development/JS-enough-t0-be-dangerous/images/stuffed-dragon.jpg":[["stuffed-dragon.ae18af4f.jpg","images/stuffed-dragon.jpg"],"images/stuffed-dragon.jpg"],"_css_loader":"../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"script.js":[function(require,module,exports) {
 "use strict";
 
 require("/style.scss");
 
+console.log('initial local storage', window.localStorage.getItem('creatureArray'));
 var creatureList = [];
 var formName = document.querySelector('#name');
 var formBreed = document.querySelector('#breed');
+var testDiv = document.querySelector('#testdiv');
+var card = document.querySelector('#card');
+var deleteButton = document.querySelector('#delete-button');
 var formDescription = document.querySelector('#description');
 var button = document.querySelector('button');
-button.addEventListener('click', function (e) {
+var creatureHTML = '';
+var cards = '';
+
+if (window.localStorage.getItem('creatureArray')) {
+  creatureList = JSON.parse(window.localStorage.getItem('creatureArray'));
+  createListFromStorage();
+  testDiv ? testDiv.innerHTML = creatureHTML : null;
+}
+
+function createListFromStorage() {
+  creatureList.forEach(function (creature) {
+    return creatureHTML += "<li>".concat(creature.name, "</li>");
+  });
+}
+
+button ? button.addEventListener('click', function (e) {
   e.preventDefault();
-  creatureList.push({
+  creatureList.unshift({
     name: formName.value,
     breed: formBreed.value,
     description: formDescription.value
   });
-  console.log(creatureList);
+  creatureHTML += "<li>".concat(creatureList[0].name, "</li>");
+  testDiv ? testDiv.innerHTML = creatureHTML : null;
+  window.localStorage.setItem('creatureArray', JSON.stringify(creatureList));
+}) : null;
+console.log('creature list', creatureList);
+
+function createCardsFromStorage() {
+  creatureList.forEach(function (creature) {
+    cards += "<div class=\"card\">\n        <h4>".concat(creature.name, "</h4>\n        <p>").concat(creature.breed, "</p>\n        <p>").concat(creature.description, "</p>\n      </div>");
+    console.log(cards);
+  });
+}
+
+createCardsFromStorage();
+card ? card.innerHTML = cards : null;
+deleteButton.addEventListener('click', function () {
+  window.localStorage.setItem('creatureArray', []);
+  createListFromStorage();
+  createCardsFromStorage();
 });
-window.localStorage.setItem = JSON.stringify(creatureList);
-var test = JSON.parse(window.localStorage.getItem(creatureList));
-console.log('test', test);
-},{"/style.scss":"style.scss"}],"../../.nvm/versions/node/v8.15.0/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"/style.scss":"style.scss"}],"../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -225,7 +259,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "43903" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62377" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
@@ -367,5 +401,5 @@ function hmrAccept(bundle, id) {
     return hmrAccept(global.parcelRequire, id);
   });
 }
-},{}]},{},["../../.nvm/versions/node/v8.15.0/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","script.js"], null)
+},{}]},{},["../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","script.js"], null)
 //# sourceMappingURL=/script.75da7f30.map

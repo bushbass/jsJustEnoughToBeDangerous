@@ -1,6 +1,9 @@
 body {
   font-family: "Rubik", sans-serif;
-  background-color: rgba(244, 191, 66, 0.7);
+  background-image: url("stuffed-dragon.ae18af4f.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-shadow: 2px 2px 2px white, -2px -2px 2px white;
 }
 
 header h1 {
@@ -28,16 +31,38 @@ nav a:visited {
   color: black;
 }
 
+#card {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .card {
   border: 1px solid black;
   width: 200px;
   border-radius: 5px;
   box-shadow: 3px 3px 10px grey;
   padding: 10px;
+  margin: 10px;
 }
 
 main {
   min-height: 50vh;
+}
+main .warning {
+  color: red;
+}
+main #delete-button {
+  background-color: red;
+  border: none;
+  padding: 7px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1rem;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 320px;
 }
 
 #main-questions {
