@@ -12,8 +12,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "cssnano": "^4.1.8",
     "gh-pages": "^2.0.1",
-    "sass": "^1.17.0",
-    "parcel": "^1.9.7"
+    "parcel": "^1.9.7",
+    "sass": "^1.17.0"
   }
 }
