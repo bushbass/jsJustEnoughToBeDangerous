@@ -215,12 +215,13 @@ button ? button.addEventListener('click', function (e) {
   creatureHTML += "<li>".concat(creatureList[0].name, "</li>");
   testDiv ? testDiv.innerHTML = creatureHTML : null;
   window.localStorage.setItem('creatureArray', JSON.stringify(creatureList));
+  window.location.href = 'show-creatures.html';
 }) : null;
 console.log('creature list', creatureList);
 
 function createCardsFromStorage() {
   creatureList.forEach(function (creature) {
-    cards += "<div class=\"card\">\n        <h4>".concat(creature.name, "</h4>\n        <p>").concat(creature.breed, "</p>\n        <p>").concat(creature.description, "</p>\n      </div>");
+    cards += "<div class=\"card\">\n        <h4>Name: ".concat(creature.name, "</h4>\n        <p>Breed: ").concat(creature.breed, "</p>\n        <p>Description: ").concat(creature.description, "</p>\n      </div>");
     console.log(cards);
   });
 }
@@ -231,6 +232,7 @@ deleteButton.addEventListener('click', function () {
   window.localStorage.setItem('creatureArray', []);
   createListFromStorage();
   createCardsFromStorage();
+  location.reload();
 });
 },{"/style.scss":"style.scss"}],"../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -259,7 +261,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51851" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54141" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);

@@ -40,6 +40,7 @@ button
         'creatureArray',
         JSON.stringify(creatureList)
       );
+      window.location.href = 'show-creatures.html';
     })
   : null;
 
@@ -47,9 +48,9 @@ console.log('creature list', creatureList);
 function createCardsFromStorage() {
   creatureList.forEach(creature => {
     cards += `<div class="card">
-        <h4>${creature.name}</h4>
-        <p>${creature.breed}</p>
-        <p>${creature.description}</p>
+        <h4>Name: ${creature.name}</h4>
+        <p>Breed: ${creature.breed}</p>
+        <p>Description: ${creature.description}</p>
       </div>`;
     console.log(cards);
   });
@@ -61,4 +62,5 @@ deleteButton.addEventListener('click', () => {
   window.localStorage.setItem('creatureArray', []);
   createListFromStorage();
   createCardsFromStorage();
+  location.reload();
 });
