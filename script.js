@@ -1,4 +1,3 @@
-import '/style.scss';
 console.log(
   'initial local storage',
   window.localStorage.getItem('creatureArray')
