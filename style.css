@@ -45,6 +45,13 @@ nav a:visited {
 }
 main {
   min-height: 50vh;
+  width: 340px;
+}
+.main-add {
+  width: 340px;
+  background-color: rgba(256, 256, 256, 0.6);
+  border-radius: 5px;
+  padding: 5px;
 }
 main #delete-button {
   background-color: red;
