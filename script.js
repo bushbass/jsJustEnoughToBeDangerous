@@ -61,5 +61,5 @@ deleteButton.addEventListener('click', () => {
   window.localStorage.setItem('creatureArray', []);
   createListFromStorage();
   createCardsFromStorage();
-  location.reload();
+  window.location.reload();
 });
