@@ -1,6 +1,6 @@
 body {
   font-family: 'Rubik', sans-serif;
-  background-image: url('images/stuffed-dragon.jpg');
+  /* background-image: url('public/stuffed-dragon.jpg'); */
   background-size: cover;
   background-repeat: no-repeat;
   text-shadow: 2px 2px 2px white, -2px -2px 2px white;
@@ -31,7 +31,7 @@ nav a:visited {
   color: black;
 }
 
-#card {
+#cards {
   display: flex;
   flex-wrap: wrap;
 }

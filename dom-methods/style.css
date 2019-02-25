@@ -49,17 +49,6 @@ main {
 }
 .main-add {
   width: 340px;
-  margin: 0 auto;
-  background-color: rgba(256, 256, 256, 0.6);
-  border-radius: 5px;
-  padding: 5px;
-}
-.main-cards {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  /* margin: 0 auto; */
   background-color: rgba(256, 256, 256, 0.6);
   border-radius: 5px;
   padding: 5px;
