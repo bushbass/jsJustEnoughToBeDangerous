@@ -32,9 +32,6 @@ class App extends Component {
   deleteCardData() {
     this.setState({ cardData: [] });
   }
-  testFunc() {
-    alert('from app.js');
-  }
 
   render() {
     return (
