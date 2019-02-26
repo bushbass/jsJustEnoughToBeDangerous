@@ -8,7 +8,6 @@ export default class Main extends Component {
     return (
       <main className="main-cards">
         <MainHeader />
-        {console.log(this.props)}
         <Cards cardArray={this.props.cardArray} />
         <DeleteButton deleteCardData={this.props.deleteCardData} />
       </main>

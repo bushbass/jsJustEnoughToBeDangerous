@@ -29,6 +29,7 @@ class App extends Component {
   updateCardData(cardState) {
     this.setState({ cardData: [...this.state.cardData, cardState] });
   }
+
   deleteCardData() {
     this.setState({ cardData: [] });
   }

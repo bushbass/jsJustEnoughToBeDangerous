@@ -48,12 +48,12 @@ export default class AddCreature extends Component {
             value={this.state.description}
             onChange={this.handleInputChange}
           />
-
           <button
             id="add-button"
             onClick={event => {
               event.preventDefault();
               this.props.updateCardData(this.state);
+              this.props.history.push('/show-creature');
             }}
           >
             Add A Creature!
