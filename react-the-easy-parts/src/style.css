@@ -6,10 +6,7 @@ body {
   text-shadow: 2px 2px 2px white, -2px -2px 2px white;
 }
 
-header h1 {
-  font-family: 'Creepster', cursive;
-  font-size: 3rem;
-}
+
 header a {
   display: inline-block;
   transition: 0.25s;
@@ -64,20 +61,7 @@ main {
   border-radius: 5px;
   padding: 5px;
 }
-main #delete-button {
-  background-color: red;
-  border: none;
-  padding: 7px 10px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 1rem;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 5px;
-  width: 320px;
-  text-shadow: none;
-}
+
 #main-questions {
   margin-left: 30px;
 }
