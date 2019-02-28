@@ -25,7 +25,27 @@ class App extends Component {
       { name: 'Penko', breed: 'Penguin', description: 'classic penguin' }
     ]
   };
-
+  
+  componentDidMount() {
+    let defaultCardData = {
+      cardData: [
+        { name: 'Darla', breed: 'dragon', description: 'pink dragon' },
+        { name: 'Quintato', breed: 'iguana', description: 'green iguana' },
+        { name: 'Penko', breed: 'Penguin', description: 'classic penguin' },
+        { name: 'Bob',breed:'human',description:'stupid human'}
+      ]
+    };
+    let cardData = JSON.parse(window.localStorage.getItem('cardData'));
+    // console.log('card data from local storage - ', cardData);
+    if (cardData === null) {
+      window.localStorage.setItem('cardData', JSON.stringify(defaultCardData));
+     
+    }
+    console.log(cardData)
+this.setState(cardData)
+    
+  }
+  
   updateCardData(cardState) {
     this.setState({ cardData: [...this.state.cardData, cardState] });
   }
